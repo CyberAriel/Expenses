@@ -1,0 +1,15 @@
+/Users/patrykpieczka/Projects/Expenses/Expenses/bin/Debug/net6.0/Expenses
+/Users/patrykpieczka/Projects/Expenses/Expenses/bin/Debug/net6.0/Expenses.deps.json
+/Users/patrykpieczka/Projects/Expenses/Expenses/bin/Debug/net6.0/Expenses.runtimeconfig.json
+/Users/patrykpieczka/Projects/Expenses/Expenses/bin/Debug/net6.0/Expenses.dll
+/Users/patrykpieczka/Projects/Expenses/Expenses/bin/Debug/net6.0/ref/Expenses.dll
+/Users/patrykpieczka/Projects/Expenses/Expenses/bin/Debug/net6.0/Expenses.pdb
+/Users/patrykpieczka/Projects/Expenses/Expenses/obj/Debug/net6.0/Expenses.csproj.AssemblyReference.cache
+/Users/patrykpieczka/Projects/Expenses/Expenses/obj/Debug/net6.0/Expenses.GeneratedMSBuildEditorConfig.editorconfig
+/Users/patrykpieczka/Projects/Expenses/Expenses/obj/Debug/net6.0/Expenses.AssemblyInfoInputs.cache
+/Users/patrykpieczka/Projects/Expenses/Expenses/obj/Debug/net6.0/Expenses.AssemblyInfo.cs
+/Users/patrykpieczka/Projects/Expenses/Expenses/obj/Debug/net6.0/Expenses.csproj.CoreCompileInputs.cache
+/Users/patrykpieczka/Projects/Expenses/Expenses/obj/Debug/net6.0/Expenses.dll
+/Users/patrykpieczka/Projects/Expenses/Expenses/obj/Debug/net6.0/ref/Expenses.dll
+/Users/patrykpieczka/Projects/Expenses/Expenses/obj/Debug/net6.0/Expenses.pdb
+/Users/patrykpieczka/Projects/Expenses/Expenses/obj/Debug/net6.0/Expenses.genruntimeconfig.cache
