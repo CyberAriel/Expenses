@@ -4,14 +4,9 @@ public abstract class Count
     protected string name;
     protected int cash;
     protected string path;
-    //protected int i = 0 ;
     protected int earnings = 0;
     protected int expenses = 0;
     protected int savings = 0;
-
-
-
-
 
     public virtual void WriteText()
     {

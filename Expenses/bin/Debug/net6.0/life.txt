@@ -7,3 +7,5 @@ cd 500
 vinyl 200
 sadsd 99
 ab 90
+sdw 898
+1 1

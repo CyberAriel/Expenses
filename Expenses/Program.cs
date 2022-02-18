@@ -1,8 +1,5 @@
 ﻿using System.IO;
 
-
-
-
 static void Menu()
 {
     Console.WriteLine("Select section");
@@ -12,11 +9,36 @@ static void Menu()
     Console.WriteLine("4: Education");
     Console.WriteLine("5: Freedoom");
     Console.WriteLine("6: Charity");
-
 }
 
+static void Read(Count c)
+{
+    c.ReadText();
+    Console.WriteLine("Press the key to return to the menu");
+    Console.ReadKey();
+}
+static void Write(Count c)
+{
+    string s;
+    do
+    {
+        c.WriteText();
+        Console.WriteLine("Do you want to add another expense (y/n)");
+        s = Console.ReadLine();
+    } while (s.Equals("y"));
+    Console.WriteLine("Do you want to see your expenses (y/n)");
+    s = Console.ReadLine();
+    if (s.Equals("y"))
+    {
+        c.ReadText();
+        Console.WriteLine("Press the key to return to the menu");
+        Console.ReadKey();
+    }
+
+}
+Count count;
 int action;
-string s;
+
 Console.WriteLine("Welcome in Expenses");
 Console.WriteLine("Create by Patryk Pieczka");
 Earnings earnings = new Earnings();
@@ -50,113 +72,42 @@ do
             {
                 case 1:
                     Life life = new Life();
-                    do
-                    {
-                        life.WriteText();
-                        Console.WriteLine("Do you want to add another expense (y/n)");
-                        s = Console.ReadLine();
-                    } while (s.Equals("y"));
-                    Console.WriteLine("Do you want to see your expenses (y/n)");
-                    s = Console.ReadLine();
-                    if (s.Equals("y"))
-                    {
-                        life.ReadText();
-                        Console.WriteLine("Press the key to return to the menu");
-                        Console.ReadKey();
-                    }
+                    count = life;
+                    Write(count);
 
+                 
 
                     break;
 
                 case 2:
                     Large large = new Large();
-                    do
-                    {
-                        large.WriteText();
-                        Console.WriteLine("Do you want to add another expense (y/n)");
-                        s = Console.ReadLine();
-                    } while (s.Equals("y"));
-                    Console.WriteLine("Do you want to see your expenses (y/n)");
-                    s = Console.ReadLine();
-                    if (s.Equals("y"))
-                    {
-                        large.ReadText();
-                        Console.WriteLine("Press the key to return to the menu");
-                        Console.ReadKey();
-                    }
+                    count = large;
+                    Write(count);
 
                     break;
 
                 case 3:
                     Pleasures pleasures = new Pleasures();
-                    do
-                    {
-                        pleasures.WriteText();
-                        Console.WriteLine("Do you want to add another expense (y/n)");
-                        s = Console.ReadLine();
-                    } while (s.Equals("y"));
-                    Console.WriteLine("Do you want to see your expenses (y/n)");
-                    s = Console.ReadLine();
-                    if (s.Equals("y"))
-                    {
-                        pleasures.ReadText();
-                        Console.WriteLine("Press the key to return to the menu");
-                        Console.ReadKey();
-                    }
+                    count = pleasures;
+                    Write(count);
 
                     break;
                 case 4:
                     Education education = new Education();
-                    do
-                    {
-                        education.WriteText();
-                        Console.WriteLine("Do you want to add another expense (y/n)");
-                        s = Console.ReadLine();
-                    } while (s.Equals("y"));
-                    Console.WriteLine("Do you want to see your expenses (y/n)");
-                    s = Console.ReadLine();
-                    if (s.Equals("y"))
-                    {
-                        education.ReadText();
-                        Console.WriteLine("Press the key to return to the menu");
-                        Console.ReadKey();
-                    }
+                    count = education;
+                    Write(count);
 
                     break;
                 case 5:
                     Freedom freedom = new Freedom();
-                    do
-                    {
-                        freedom.WriteText();
-                        Console.WriteLine("Do you want to add another expense (y/n)");
-                        s = Console.ReadLine();
-                    } while (s.Equals("y"));
-                    Console.WriteLine("Do you want to see your expenses (y/n)");
-                    s = Console.ReadLine();
-                    if (s.Equals("y"))
-                    {
-                        freedom.ReadText();
-                        Console.WriteLine("Press the key to return to the menu");
-                        Console.ReadKey();
-                    }
+                    count = freedom;
+                    Write(count);
 
                     break;
                 case 6:
                     Charity charity = new Charity();
-                    do
-                    {
-                        charity.WriteText();
-                        Console.WriteLine("Do you want to add another expense (y/n)");
-                        s = Console.ReadLine();
-                    } while (s.Equals("y"));
-                    Console.WriteLine("Do you want to see your expenses (y/n)");
-                    s = Console.ReadLine();
-                    if (s.Equals("y"))
-                    {
-                        charity.ReadText();
-                        Console.WriteLine("Press the key to return to the menu");
-                        Console.ReadKey();
-                    }
+                    count = charity;
+                    Write(count);
 
                     break;
 
@@ -174,47 +125,42 @@ do
             {
                 case 1:
                     Life life = new Life();
+                    count = life;
+                    Read(count);
+
                   
-                        life.ReadText();
-                        Console.WriteLine("Press the key to return to the menu");
-                    Console.ReadKey();
                     break;
 
                 case 2:
                     Large large = new Large();
-                   
-                    large.ReadText();
-                    Console.WriteLine("Press the key to return to the menu");
-                    Console.ReadKey();
+                    count = large;
+                    Read(count);
+                 
                     break;
 
                 case 3:
                     Pleasures pleasures = new Pleasures();
-
-                    pleasures.ReadText();
-                    Console.WriteLine("Press the key to return to the menu");
-                    Console.ReadKey();
+                    count = pleasures;
+                    Read(count);
+                  
                     break;
                 case 4:
                     Education education = new Education();
-
-                    education.ReadText();
-                    Console.WriteLine("Press the key to return to the menu");
-                    Console.ReadKey();
+                    count = education;
+                    Read(count);
+                  
                     break;
                 case 5:
                     Freedom freedom = new Freedom();
-
-                    freedom.ReadText();
-                    Console.WriteLine("Press the key to return to the menu");
-                    Console.ReadKey();
+                    count = freedom;
+                    Read(count);
+                 
                     break;
                 case 6:
                     Charity charity = new Charity();
-
-                    charity.ReadText();
-                    Console.WriteLine("Press the key to return to the menu");
-                    Console.ReadKey();
+                    count = charity;
+                    Read(count);
+                 
                     break;
 
                 default:
@@ -240,6 +186,7 @@ do
             Console.WriteLine("Wrong action");
             break;
     }
+    GC.Collect();
 } while (action != 0);
 
 
@@ -248,12 +195,10 @@ do
 
 
 
-//life.WriteText();
-//life.ReadText();
 
 
 
 
-GC.Collect();
+
 
 
