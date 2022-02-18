@@ -1,1 +1,9 @@
 meat 40
+Empty 0
+Pc 200
+pc 300
+sd 30
+cd 500
+vinyl 200
+sadsd 99
+ab 90
