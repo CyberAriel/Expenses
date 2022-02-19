@@ -1,16 +1,14 @@
 ﻿<Properties StartupConfiguration="{BBA01929-5686-4FB0-9372-CE0635C8B1B5}|Default">
   <MonoDevelop.Ide.Workbench ActiveDocument="Count.cs">
     <Files>
-      <File FileName="Count.cs" Line="1" Column="1" />
-      <File FileName="Program.cs" Line="1" Column="1" />
+      <File FileName="Count.cs" Line="57" Column="1" />
+      <File FileName="Program.cs" Line="176" Column="13" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="Expenses" expanded="True">
-            <Node name="Expenses" expanded="True">
-              <Node name="Count.cs" selected="True" />
-            </Node>
+            <Node name="Expenses" expanded="True" />
           </Node>
         </State>
       </Pad>

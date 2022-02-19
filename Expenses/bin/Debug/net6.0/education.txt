@@ -1,2 +1,0 @@
-education.txt
-1 1

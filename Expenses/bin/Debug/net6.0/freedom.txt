@@ -1,2 +1,0 @@
-freedom.txt
-1 1

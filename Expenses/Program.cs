@@ -1,4 +1,6 @@
 ﻿using System.IO;
+using System;
+using System.Collections;
 
 static void Menu()
 {
@@ -11,18 +13,13 @@ static void Menu()
     Console.WriteLine("6: Charity");
 }
 
-static void Read(Count c)
+static void WriteExpenses(Expenses ex)
 {
-    c.ReadText();
-    Console.WriteLine("Press the key to return to the menu");
-    Console.ReadKey();
-}
-static void Write(Count c)
-{
+   
     string s;
     do
     {
-        c.WriteText();
+        ex.AddExpenses();
         Console.WriteLine("Do you want to add another expense (y/n)");
         s = Console.ReadLine();
     } while (s.Equals("y"));
@@ -30,10 +27,44 @@ static void Write(Count c)
     s = Console.ReadLine();
     if (s.Equals("y"))
     {
-        c.ReadText();
+        ex.ShowExpenses();
         Console.WriteLine("Press the key to return to the menu");
         Console.ReadKey();
     }
+
+}
+
+static void ReadExpesnes(Expenses ex)
+{
+    ex.ShowExpenses();
+    Console.WriteLine("Press the key to return to the menu");
+    Console.ReadKey();
+}
+
+static void Earn (Earnings ea)
+{
+    string s;
+    Console.WriteLine("Do you want to add your earnings (y/n)");
+    s = Console.ReadLine();
+    if (s.Equals("y"))
+    {
+        do
+        {
+            ea.AddEarnigns();
+            Console.WriteLine("Do you want to add another earnings (y/n)");
+            s = Console.ReadLine();
+        } while (s.Equals("y"));
+    }
+    
+    Console.WriteLine("Do you want to see your earnings (y/n)");
+    s = Console.ReadLine();
+    if (s.Equals("y"))
+    {
+        ea.ShowEarnings();
+        Console.WriteLine("Press the key to return to the menu");
+        Console.ReadKey();
+    }
+    
 
 }
 Count count;
@@ -71,48 +102,44 @@ do
             switch (action)
             {
                 case 1:
-                    Life life = new Life();
-                    count = life;
-                    Write(count);
-
-                 
+                    Expenses life = new Expenses("life.txt");
+                    
+                    WriteExpenses(life);
 
                     break;
-
                 case 2:
-                    Large large = new Large();
-                    count = large;
-                    Write(count);
+                    Expenses large = new Expenses("large.txt");
+
+                    WriteExpenses(large);
 
                     break;
-
                 case 3:
-                    Pleasures pleasures = new Pleasures();
-                    count = pleasures;
-                    Write(count);
+                    Expenses pleasures = new Expenses("pleasures.txt");
+
+                    WriteExpenses(pleasures);
 
                     break;
                 case 4:
-                    Education education = new Education();
-                    count = education;
-                    Write(count);
+                    Expenses education = new Expenses("education.txt");
+
+                    WriteExpenses(education);
 
                     break;
                 case 5:
-                    Freedom freedom = new Freedom();
-                    count = freedom;
-                    Write(count);
+                    Expenses freedom = new Expenses("freedom.txt");
+
+                    WriteExpenses(freedom);
 
                     break;
                 case 6:
-                    Charity charity = new Charity();
-                    count = charity;
-                    Write(count);
+                    Expenses charity = new Expenses("charity.txt");
+
+                    WriteExpenses(charity);
 
                     break;
-
                 default:
                     Console.WriteLine("Wrong section");
+
                     break;
             }
             break;
@@ -124,53 +151,50 @@ do
             switch (action)
             {
                 case 1:
-                    Life life = new Life();
-                    count = life;
-                    Read(count);
+                    Expenses life = new Expenses("life.txt");
 
-                  
+                    ReadExpesnes(life);
+
                     break;
-
                 case 2:
-                    Large large = new Large();
-                    count = large;
-                    Read(count);
+                    Expenses large = new Expenses("large.txt");
+
+                    ReadExpesnes(large);
                  
                     break;
-
                 case 3:
-                    Pleasures pleasures = new Pleasures();
-                    count = pleasures;
-                    Read(count);
+                    Expenses pleasures = new Expenses("pleasures.txt");
+
+                    ReadExpesnes(pleasures);
                   
                     break;
                 case 4:
-                    Education education = new Education();
-                    count = education;
-                    Read(count);
+                    Expenses education = new Expenses("education.txt");
+
+                    ReadExpesnes(education);
                   
                     break;
                 case 5:
-                    Freedom freedom = new Freedom();
-                    count = freedom;
-                    Read(count);
+                    Expenses freedom = new Expenses("freedom.txt");
+
+                    ReadExpesnes(freedom);
                  
                     break;
                 case 6:
-                    Charity charity = new Charity();
-                    count = charity;
-                    Read(count);
+                    Expenses charity = new Expenses("charity.txt");
+
+                    ReadExpesnes(charity);
                  
                     break;
-
                 default:
                     Console.WriteLine("Wrong section");
+
                     break;
             }
             break;
 
         case 3:
-           
+            Earn(earnings);
             break;
         case 4:
 
