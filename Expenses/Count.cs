@@ -4,7 +4,11 @@
     protected int cash;
     protected string path;
     protected int variable;
-   
+    protected int display=0;
+    protected int earnings;
+    protected int expenses;
+    protected int expensestotal = 0;
+
     public virtual void WriteText()
     {
 
@@ -24,7 +28,7 @@
         
     }
 
-    public virtual void ReadText(ref int variable)
+    public virtual void ReadText(ref int variable, int display)
     {
         if (!File.Exists(path))
         {
@@ -36,7 +40,11 @@
             string s = " ";
             while ((s = sr.ReadLine()) != null)
             {
-                Console.WriteLine(s);
+                if (display!=0)
+                {
+                    Console.WriteLine(s);
+                }
+                
                 string[] subs = s.Split(' ', '.');
                 int j = subs.Length;
                 variable = variable + Int32.Parse(subs[j - 1]);
@@ -49,8 +57,8 @@
 
 public class Earnings : Count
 {
-    protected int earnings;
-
+    
+   
     public Earnings(string name = "Empty", int cash = 0, string path="earnings.txt", int earnings=0)
     {
         this.cash = cash;
@@ -70,37 +78,22 @@ public class Earnings : Count
 
     public void ShowEarnings()
     {
-        ReadText(ref earnings);
+        earnings = 0;
+        display = 1;
+        ReadText(ref earnings, display);
         Console.WriteLine("You earn in last month: " + earnings);
     }
    
     public void Show()
     {
-        if (!File.Exists(path))
-        {
-            earnings = 0;
-        }
-        else
-        {
-            StreamReader sr = File.OpenText(path);
-            string s = " ";
-            while ((s = sr.ReadLine()) != null)
-            {
-                //Console.WriteLine(s);
-                string[] subs = s.Split(' ', '.');
-                int j = subs.Length;
-                earnings = earnings + Int32.Parse(subs[j - 1]);
-
-            }
-            Console.WriteLine("Your Ernings: " + earnings);
-            sr.Close();
-        }
-    
+        earnings = 0;
+        ReadText(ref earnings, display);
+        Console.WriteLine("You earn total: " + earnings);
     }
 }
 public class Expenses : Count
 {
-    protected int expenses;
+    
 
     public Expenses(string path = "expenses.txt", string name = "Empty", int cash = 0, int expenses=0)
     {
@@ -117,20 +110,39 @@ public class Expenses : Count
         Console.WriteLine("Enter the cost of the product / service.");
         cash = Int32.Parse(Console.ReadLine());
         WriteText();
-
     }
 
     public void ShowExpenses()
     {
-        ReadText(ref expenses);
-        
+        display = 1;
+        ReadText(ref expenses, display);
         Console.WriteLine("You spent in total: " + expenses);
+    }
+    void Expensestotal(string path)
+    {
+        expenses = 0;
+        this.path = path;
+        ReadText(ref expenses, display);
+        expensestotal = expensestotal + expenses;
+
+       // Console.WriteLine("You expenses "+path+": " + expenses);
+        
     }
 
     public void Show()
     {
-        Console.WriteLine("Your Expenses: " + expenses);
+
+        Expensestotal("life.txt");
+        Expensestotal("large.txt");
+        Expensestotal("pleasures.txt");
+        Expensestotal("education.txt");
+        Expensestotal("freedom.txt");
+        Expensestotal("charity.txt");
+
+        
+        Console.WriteLine("You expenses total: " + expensestotal);
     }
+
 }
 
 public class Savings : Count
@@ -139,6 +151,9 @@ public class Savings : Count
 
     public void Show()
     {
+
+
+        savings = earnings - expensestotal;
         Console.WriteLine("Your Saving: " + savings);
     }
 }
